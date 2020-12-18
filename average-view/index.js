@@ -1,17 +1,19 @@
 const express = require('express');
 const app = express();
 
-const cors = require('cors')
+const cors = require('cors');
 app.use(cors());
 
-const bodyParser = require('body-parser')
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended:true}))
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
 
 
-app.get('/', function(req, res) {
-    res.send({'result': 'success'});
-});
+const Queries = require('./queries');
+const queries = new Queries();
+
+const methods = require('./methods');
+methods(app, queries);
 
 
 const PORT = 3000;
