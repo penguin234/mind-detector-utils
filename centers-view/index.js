@@ -16,7 +16,7 @@ const methods = require('./methods');
 methods(app, queries);
 
 
-const PORT = 3000;
+const PORT = 8080;
 
 const server = app.listen(PORT, function() {
     console.log('listenning on port ' + PORT.toString());
