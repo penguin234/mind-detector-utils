@@ -43,6 +43,7 @@ module.exports = function() {
                                 }
     
                                 done();
+                                client.release();
                                 callback(null, res2.rows[0]);
                             });
                         });
